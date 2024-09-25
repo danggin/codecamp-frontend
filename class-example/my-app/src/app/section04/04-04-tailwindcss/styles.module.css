@@ -1,0 +1,9 @@
+.button {
+  background-color: yellow;
+
+  @apply text-blue; /* tailwind와 css 함께 쓰기*/
+}
+
+.box {
+  @apply bg-red;
+}

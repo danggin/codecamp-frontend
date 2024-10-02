@@ -14,16 +14,20 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+interface IRootLayoutProps {
+  children: React.ReactNode;
+}
+
 export const metadata: Metadata = {
   title: "Home Page",
   description: "안녕하세요",
 };
 
-export default function RootLayout(props: any) {
+export default function RootLayout({ children }: IRootLayoutProps) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ApolloSetting>{props.children}</ApolloSetting>
+        <ApolloSetting>{children}</ApolloSetting>
       </body>
     </html>
   );

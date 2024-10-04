@@ -3,7 +3,6 @@
 import { gql, useMutation } from "@apollo/client";
 import { useParams, useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
-import { FETCH_BOARD } from "@/app/section09/09-04-boards-validation/[number]/edit/page";
 
 const CREATE_BOARD = gql`
   mutation createBoard(
@@ -83,7 +82,6 @@ export default function BoardsWrite(props: any) {
 
     const result = await updatePost({
       variables: myVariables,
-      refetchQueries: [{ query: FETCH_BOARD }],
     });
 
     alert("수정이 완료되었습니다!");

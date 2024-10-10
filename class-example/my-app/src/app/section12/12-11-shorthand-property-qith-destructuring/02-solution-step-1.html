@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>안전한 리팩토링 실습</title>
+    <script>
+      // let { name, age, school } = profile;
+      const qqq = ({ name, age, school }) => {
+        console.log(name);
+        console.log(age);
+        console.log(school);
+      };
+
+      const profile = {
+        name: "철수",
+        age: 12,
+        school: "다람쥐초등학교",
+      };
+
+      qqq(profile);
+    </script>
+  </head>
+  <body></body>
+</html>

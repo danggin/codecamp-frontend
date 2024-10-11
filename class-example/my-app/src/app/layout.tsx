@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import ApolloSetting from "@/commons/settings/06-02-apollo-setting";
+import Layout from "@/commons/layout";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,7 +28,9 @@ export default function RootLayout({ children }: IRootLayoutProps) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ApolloSetting>{children}</ApolloSetting>
+        <ApolloSetting>
+          <Layout>{children}</Layout>
+        </ApolloSetting>
       </body>
     </html>
   );

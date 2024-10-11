@@ -13,4 +13,7 @@
 * {
   font-family: var(--font-geist-mono);
   font-size: 20px;
+  box-sizing: border-box;
+  padding: unset;
+  margin: unset;
 }

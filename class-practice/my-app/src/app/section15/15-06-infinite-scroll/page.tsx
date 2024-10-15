@@ -43,8 +43,9 @@ export default function InfiniteScrollPage() {
   };
 
   return (
-    <div>
+    <div id="scroll" style={{ height: "250px", overflowY: "scroll" }}>
       <InfiniteScroll
+        scrollableTarget="scroll"
         dataLength={data?.fetchBoards.length ?? 0}
         next={onNext}
         hasMore={true}

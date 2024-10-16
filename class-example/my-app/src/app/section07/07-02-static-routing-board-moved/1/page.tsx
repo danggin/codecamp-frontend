@@ -3,7 +3,7 @@
 import { gql, useQuery } from "@apollo/client";
 
 const FETCH_BOARD = gql`
-  query {
+  query fetchBoard1 {
     fetchBoard(number: 1) {
       number
       writer

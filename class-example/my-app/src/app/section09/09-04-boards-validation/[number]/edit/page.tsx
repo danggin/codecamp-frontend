@@ -5,8 +5,8 @@ import { useParams } from "next/navigation";
 import BoardsWrite from "@/components/09-04-boards-validation-write";
 
 export const FETCH_BOARD = gql`
-  query fetchBoard($number: Int) {
-    fetchBoard(number: $number) {
+  query fetchBoard($myNumber: Int) {
+    fetchBoard(number: $myNumber) {
       number
       writer
       title
@@ -19,7 +19,7 @@ export default function BoardEditPage() {
   const params = useParams();
 
   const { data } = useQuery(FETCH_BOARD, {
-    variables: { number: Number(params.number) },
+    variables: { myNumber: Number(params.number) },
   });
   console.log(data);
 

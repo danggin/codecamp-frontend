@@ -41,8 +41,8 @@ export const UPDATE_BOARD = gql`
 `;
 
 export const FETCH_BOARD = gql`
-  query fetchBoard($number: Int) {
-    fetchBoard(number: $number) {
+  query fetchBoard($myNumber: Int) {
+    fetchBoard(number: $myNumber) {
       number
       writer
       title

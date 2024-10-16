@@ -11,10 +11,6 @@ const config: CodegenConfig = {
         "typescript-operations",
         "typescript-react-apollo",
       ],
-      config: {
-        noDuplicatedOperationName: false,
-        dedupeOperationSuffix: true, // 추가된 설정
-      },
     },
   },
 };

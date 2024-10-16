@@ -1,0 +1,9 @@
+this
+Window {0: Window, window: Window, self: Window, document: document, name: '', location: Location, …}
+
+function plus() {
+    console.log(this)
+}
+
+plus()
+Window {0: Window, window: Window, self: Window, document: document, name: '', location: Location, …}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This problem</title>
+    <script>
+      class CounterClass {
+        count = 10;
+
+        // 헤결 방법 2) this가 변경될 부분의 미리 현재 로직상의 this를 연결(bind) 시켜 놓기
+
+        plus() {
+          console.log("plus의 this", this); // this: CounterClass
+          this.count = this.count + 1;
+          console.log(this.count); // this: CounterClass
+        }
+
+        renderButton() {
+          console.log("renderButton의 this", this); // this: CounterClass => this는 현재 시각적으로 감싸고 있는 객케 또는 클래스
+
+          const button = document.createElement("button");
+          //   button.count = 50;
+          button.innerText = "더하기";
+          button.addEventListener("click", this.plus.bind(this));
+          document.body.appendChild(button);
+        }
+      }
+
+      window.onload = () => {
+        const counter = new CounterClass();
+        counter.renderButton();
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

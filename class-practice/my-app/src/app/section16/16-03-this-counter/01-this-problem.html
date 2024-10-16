@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This problem</title>
+    <script>
+      class CounterClass {
+        count = 10;
+
+        plus() {
+          console.log("plus의 this", this); // this: button => this는 실행 주체가 누구냐에 따라 바뀌기 때문
+          this.count = this.count + 1;
+          console.log(this.count); // this: button => 따라서 count가 없음
+        }
+
+        renderButton() {
+          console.log("renderButton의 this", this); // this: CounterClass => this는 현재 시각적으로 감싸고 있는 객케 또는 클래스
+
+          const button = document.createElement("button");
+          //   button.count = 50;
+          button.innerText = "더하기";
+          button.addEventListener("click", this.plus);
+          document.body.appendChild(button);
+        }
+      }
+
+      window.onload = () => {
+        const counter = new CounterClass();
+        counter.renderButton();
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

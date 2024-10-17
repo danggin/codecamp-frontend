@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "tsnode": "ts-node decorator-example.ts"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  },
+  "license": "ISC"
+}

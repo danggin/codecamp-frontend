@@ -5,7 +5,7 @@ console.log("여기서 DB에 접속하고 테이블을 만들거예요!");
 const AppDataSource = new DataSource({
   type: "postgres",
   host: "34.64.38.113", // DB가 있는 컴퓨터의 IP 주소
-  port: 5032, // DB가 있는 컴퓨터의 port
+  port: 5027, // DB가 있는 컴퓨터의 port
   username: "postgres",
   password: "postgres2022",
   database: "postgres",

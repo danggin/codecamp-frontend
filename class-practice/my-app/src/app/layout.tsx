@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import ApolloSetting from "@/commons/settings/14-01-apollo-setting";
+import ApolloUploadSetting from "@/commons/settings/18-01-apollo-upload-setting";
 import Layout from "@/commons/layout";
 
 const geistSans = localFont({
@@ -28,9 +28,9 @@ export default function RootLayout({ children }: IRootLayoutProps) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ApolloSetting>
+        <ApolloUploadSetting>
           <Layout>{children}</Layout>
-        </ApolloSetting>
+        </ApolloUploadSetting>
       </body>
     </html>
   );

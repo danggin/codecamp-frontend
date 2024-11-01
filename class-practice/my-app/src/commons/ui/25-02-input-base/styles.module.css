@@ -1,0 +1,9 @@
+.input_base {
+  height: 40px;
+}
+
+.input_soft_s_full {
+  border: 1px solid salmon;
+  width: 100%;
+  height: 40px;
+}

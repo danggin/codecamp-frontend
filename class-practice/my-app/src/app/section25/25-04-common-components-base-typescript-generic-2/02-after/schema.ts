@@ -2,7 +2,7 @@ import { UpdateBoardInput } from "@/commons/graphql/graphql";
 import { z } from "zod";
 
 // 1. 내가 만든 z.object로 타입 뽑아내기
-type TSchema = z.infer<typeof schema>;
+export type TSchema = z.infer<typeof schema>;
 
 // 2-1. 이미 타입이 있는 경우, 이 타입 적용해서 schema 만들기
 export interface ISchema {

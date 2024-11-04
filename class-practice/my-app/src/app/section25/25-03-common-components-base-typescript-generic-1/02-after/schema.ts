@@ -5,7 +5,7 @@ import { z } from "zod";
 type TSchema = z.infer<typeof schema>;
 
 // 2-1. 이미 타입이 있는 경우, 이 타입 적용해서 schema 만들기
-export interface ISchema {
+interface ISchema {
   writer: string;
   title: string;
   contents: string;

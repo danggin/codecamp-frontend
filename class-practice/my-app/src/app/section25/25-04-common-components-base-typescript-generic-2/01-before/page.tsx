@@ -4,23 +4,23 @@ import { gql, useMutation } from "@apollo/client";
 import { ChangeEvent, useState } from "react";
 
 const graphqlSetting = gql`
-  # //   mutation createBoard(
-  # //     $writerState: String
-  # //     $titleState: String
-  # //     $contentsState: String
-  # //   ) {
-  # //     # 타입 적는 곳
-  # //     createBoard(
-  # //       writer: $writerState
-  # //       title: $titleState
-  # //       contents: $contentsState
-  # //     ) {
-  # //       # 실제 전달할 변수 적는 곳
-  # //       message
-  # //       number
-  # //       _id
-  # //     }
-  # //   }
+  mutation createBoard4(
+    $writerState: String
+    $titleState: String
+    $contentsState: String
+  ) {
+    # 타입 적는 곳
+    createBoard(
+      writer: $writerState
+      title: $titleState
+      contents: $contentsState
+    ) {
+      # 실제 전달할 변수 적는 곳
+      message
+      number
+      _id
+    }
+  }
 `;
 
 export default function GraphqlMutationPage() {

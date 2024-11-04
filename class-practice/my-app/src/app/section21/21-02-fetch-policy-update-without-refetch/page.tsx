@@ -4,7 +4,7 @@ import { gql, useMutation, useQuery } from "@apollo/client";
 import { ChangeEvent } from "react";
 
 const FETCH_BOARDS = gql`
-  query fetchBoards {
+  query fetchBoards3 {
     fetchBoards {
       _id
       writer

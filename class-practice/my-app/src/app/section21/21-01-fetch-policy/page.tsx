@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 
 const FETCH_BOARDS = gql`
-  query fetchBoards {
+  query fetchBoardsNoContents {
     fetchBoards {
       _id
       writer

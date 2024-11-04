@@ -1,6 +1,7 @@
 "use client";
 
 import { gql, useMutation } from "@apollo/client";
+import { useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 
 const graphqlSetting = gql`
@@ -24,6 +25,7 @@ const graphqlSetting = gql`
 `;
 
 export default function GraphqlMutationPage() {
+  const router = useRouter();
   const [addPost] = useMutation(graphqlSetting);
 
   const [writer, setWriter] = useState("");
@@ -40,6 +42,8 @@ export default function GraphqlMutationPage() {
       },
     });
     console.log(result);
+
+    router.push("/section14/14-01-pagination");
   };
 
   const onChangeWriter = (event) => {

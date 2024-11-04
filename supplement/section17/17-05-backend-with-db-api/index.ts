@@ -19,7 +19,7 @@ const typeDefs = `#graphql
   }
 
   type Mutation {
-    createBoard(writer: String, title: String, content: String): String!
+    createBoard5(writer: String, title: String, content: String): String!
   }
 `;
 

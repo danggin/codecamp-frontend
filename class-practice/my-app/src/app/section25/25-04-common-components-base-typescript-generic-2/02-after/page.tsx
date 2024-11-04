@@ -3,9 +3,9 @@
 import { gql, useMutation } from "@apollo/client";
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { IUpdateType, ISchema, schema } from "./schema";
-import { InputSoftSFull } from "@/commons/ui/25-02-input-base";
-import { ButtonSoftMFull } from "@/commons/ui/25-02-button-base";
+import { IUpdateType, schema, TSchema } from "./schema";
+import { InputSoftSFull } from "@/commons/ui/25-04-input-base-typescript-generic-2";
+import { ButtonSoftMFull } from "@/commons/ui/25-04-button-base-typescript-generic-2";
 
 // const graphqlSetting = gql`
 //   mutation createBoard($writer: String, $title: String, $contents: String) {
@@ -46,7 +46,7 @@ export default function GraphqlMutationPage() {
       {formState.errors.writer && (
         <p style={{ color: "red" }}>{formState.errors.writer?.message}</p>
       )} */}
-        제목: {InputSoftSFull<ISchema>({ type: "text", keyname: "title" })}
+        제목: <InputSoftSFull<ISchema> type="text" keyname="title" />
         <br />
         {methods.formState.errors.title && (
           <p style={{ color: "red" }}>
@@ -66,7 +66,7 @@ export default function GraphqlMutationPage() {
         type="text"
         {...register("boardAddress.addressDetail")}
       /> */}
-        <ButtonSoftMFull>요청하기</ButtonSoftMFull>
+        <ButtonSoftMFull<ISchema>>요청하기</ButtonSoftMFull>
         {/* <button disabled={!formState.isValid}>GRAPHQL-API 요청하기</button> */}
       </form>
     </FormProvider>

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import ApolloUploadSetting from "@/commons/settings/18-01-apollo-upload-setting";
 import Layout from "@/commons/layout";
+import ApolloHeaderAndErrorSettingRefresh from "@/commons/settings/26-02-apollo-header-and-error-setting-refresh";
+import ApolloHeaderSetting from "@/commons/settings/22-01-apollo-header-setting";
+import ApolloHeaderSettingLocalstorage from "@/commons/settings/22-02-apollo-header-setting-localstorage";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,9 +30,9 @@ export default function RootLayout({ children }: IRootLayoutProps) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ApolloUploadSetting>
+        <ApolloHeaderSettingLocalstorage>
           <Layout>{children}</Layout>
-        </ApolloUploadSetting>
+        </ApolloHeaderSettingLocalstorage>
       </body>
     </html>
   );

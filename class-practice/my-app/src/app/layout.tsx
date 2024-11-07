@@ -30,9 +30,9 @@ export default function RootLayout({ children }: IRootLayoutProps) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ApolloHeaderSettingLocalstorage>
+        <ApolloHeaderAndErrorSettingRefresh>
           <Layout>{children}</Layout>
-        </ApolloHeaderSettingLocalstorage>
+        </ApolloHeaderAndErrorSettingRefresh>
       </body>
     </html>
   );

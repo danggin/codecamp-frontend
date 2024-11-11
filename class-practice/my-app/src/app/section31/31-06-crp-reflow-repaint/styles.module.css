@@ -1,0 +1,20 @@
+.reflow {
+  width: 100px;
+  height: 100px;
+  background-color: aquamarine;
+}
+
+.reflow:hover {
+  width: 120px;
+  height: 120px;
+}
+
+.repaint {
+  width: 100px;
+  height: 100px;
+  background-color: mediumslateblue;
+}
+
+.repaint:hover {
+  background-color: lightgreen;
+}

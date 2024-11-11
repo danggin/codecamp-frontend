@@ -21,11 +21,10 @@ export default function MemoizationWithMapParentPage() {
       })}*/}
 
       {/* 2. memo 를 해도 key자체가 변경되므로 5개 모두 리렌더링 됨 */}
-      {data.split(" ").map((el) => {
-        <Word el={el} key={uuid()} />;
-      })}
+      {data.split(" ").map((el) => (
+        <Word el={el} key={uuid()} />
+      ))}
       <br />
-
       <button onClick={onClickChange}>문장 변경하기</button>
     </>
   );

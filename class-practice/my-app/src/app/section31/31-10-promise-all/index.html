@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise.all</title>
+    <script>
+      // 1. Promise 연습
+      const startPromise = async () => {
+        console.time("=== 개별 Promise ===");
+        const result1 = await new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("성공1");
+          }, 2000);
+        });
+
+        const result2 = await new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("성공2");
+          }, 3000);
+        });
+
+        const result3 = await new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("성공3");
+          }, 1000);
+        });
+
+        const results = [result1, result2, result3];
+        console.log(results);
+        console.timeEnd("=== 개별 Promise ===");
+      };
+
+      // 2. Promise.all 연습
+      const startPromiseAll = async () => {
+        // await Promise.all([promise, promise, promise])
+
+        console.time("=== Promise.all ===");
+
+        const results = await Promise.all([
+          new Promise((resolve) => {
+            setTimeout(() => {
+              resolve("성공1");
+            }, 2000);
+          }),
+          new Promise((resolve) => {
+            setTimeout(() => {
+              resolve("성공2");
+            }, 3000);
+          }),
+          new Promise((resolve) => {
+            setTimeout(() => {
+              resolve("성공3");
+            }, 1000);
+          }),
+        ]);
+
+        console.log(results);
+        console.timeEnd("=== Promise.all ===");
+      };
+    </script>
+  </head>
+  <body>
+    <button onclick="startPromise()">Promise</button>
+    <button onclick="startPromiseAll()">Promise.all</button>
+  </body>
+</html>

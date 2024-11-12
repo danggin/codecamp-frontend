@@ -1,0 +1,81 @@
+<!-- 
+ 
+`http://numbersapi.com/random?min=1&max=200`
+`https://koreanjson.com/posts/${num}`
+`https://koreanjson.com/posts?userId=${userId}` 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback, Promise, async/await</title>
+    <script>
+      const onClickCallback = () => {
+        const req1 = new XMLHttpRequest();
+        req1.open("get", `http://numbersapi.com/random?min=1&max=200`);
+        req1.send();
+        req1.addEventListener("load", (res) => {
+          const num = res.target.response.split(" ")[0];
+
+          const req2 = new XMLHttpRequest();
+          req2.open("get", `https://koreanjson.com/posts/${num}`);
+          req2.send();
+          req2.addEventListener("load", (res) => {
+            const userId = JSON.parse(res.target.response).UserId;
+
+            const req3 = new XMLHttpRequest();
+            req3.open("get", `https://koreanjson.com/posts?userId=${userId}`);
+            req3.send();
+            req3.addEventListener("load", (res) => {
+              console.log(JSON.parse(res.target.response));
+            });
+          });
+        });
+      };
+
+      const onClickPromise = () => {
+        fetch(`http://numbersapi.com/random?min=1&max=200`)
+          .then((res) => res.text())
+          .then((res) => {
+            const num = res.split(" ")[0];
+            return fetch(`https://koreanjson.com/posts/${num}`);
+          })
+          .then((res) => {
+            res
+              .json()
+              .then((res) => {
+                const userId = res.UserId;
+                return fetch(`https://koreanjson.com/posts?userId=${userId}`);
+              })
+              .then((res) => res.json())
+              .then((result) => console.log(result));
+          });
+      };
+
+      const onClickAsyncAwait = async () => {
+        const res1 = await fetch(`http://numbersapi.com/random?min=1&max=200`);
+        const res2 = await res1.text();
+        const num = res2.split(" ")[0];
+
+        const res3 = await fetch(`https://koreanjson.com/posts/${num}`);
+        const res4 = await res3.json();
+        const userId = res4.UserId;
+
+        const res5 = await fetch(
+          `https://koreanjson.com/posts?userId=${userId}`
+        );
+        const result = await res5.json();
+
+        console.log(result);
+      };
+    </script>
+  </head>
+  <body>
+    <button onclick="onClickCallback()">callback</button>
+    <button onclick="onClickPromise()">promise</button>
+    <button onclick="onClickAsyncAwait()">async/await</button>
+  </body>
+</html>

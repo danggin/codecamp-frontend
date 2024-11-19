@@ -19,6 +19,7 @@ const geistMono = localFont({
 
 interface IRootLayoutProps {
   children: React.ReactNode;
+  modal: React.ReactNode;
 }
 
 export const metadata: Metadata = {
@@ -26,10 +27,12 @@ export const metadata: Metadata = {
   description: "안녕하세요",
 };
 
-export default function RootLayout({ children }: IRootLayoutProps) {
+export default function RootLayout({ children, modal }: IRootLayoutProps) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        {/* 모달 영역 (parallel routing) */}
+        <div>{modal}</div>
         <ApolloHeaderAndErrorSettingRefresh>
           <Layout>{children}</Layout>
         </ApolloHeaderAndErrorSettingRefresh>
